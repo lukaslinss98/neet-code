@@ -1,0 +1,17 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+
+        arr = [0] * 26
+
+        for i in range(len(s)):
+            print(ord(s[i]))
+            arr[ord(s[i]) - ord('a')] += 1
+            arr[ord(t[i]) - ord('a')] -= 1
+
+        for n in arr:
+            if n != 0:
+                return False
+        
+        return True
